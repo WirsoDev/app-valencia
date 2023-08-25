@@ -1,4 +1,4 @@
-
+import Parallax from "parallax-js"
 
 function createBalls(container, nrBalls){
 
@@ -71,14 +71,42 @@ function createBalls(container, nrBalls){
 
 function clickBallsHandler(){
 
-    const allBalls = document.querySelectorAll('.ball')
+    //allBalls.forEach((ball)=>{
+    //    ball.addEventListener('click', ()=>{
+    //        console.log('click')
+    //    })
+    //})
 
-    allBalls.forEach((ball)=>{
-        ball.addEventListener('click', ()=>{
-            console.log('click')
-        })
-    })
 }
 
 
-export{createBalls, clickBallsHandler} 
+function ballsParalax(){
+
+    let ball2 = document.querySelectorAll('.ball')
+    const p = document.querySelector('#test')
+
+    window.addEventListener("deviceorientation", handleOrientation);
+
+    function handleOrientation(event) {
+
+        //get inicial gyro state
+        var absolute = event.absolute;
+        var z = Math.round(event.alpha); //left and right
+        var x = Math.round(event.beta); // up and down
+        var y = Math.round(event.gamma); // racio
+
+        // Do stuff with the new orientation data
+        ball2.forEach((ball)=>{
+            console.log('----------')
+            console.log(ball.offsetLeft, ball.offsetTop)
+            ball.style.transform = `translateY(${y})`;
+            ball.style.transform = `translateX(${x})`;
+        })
+
+        p.innerHTML = `x${x} : y${y}`
+        console.log(x, y, z)
+    }
+}
+
+
+export{createBalls, clickBallsHandler, ballsParalax} 
