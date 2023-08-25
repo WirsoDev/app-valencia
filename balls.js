@@ -69,4 +69,16 @@ function createBalls(container, nrBalls){
 }
 
 
-export{createBalls} 
+function clickBallsHandler(){
+
+    const allBalls = document.querySelectorAll('.ball')
+
+    allBalls.forEach((ball)=>{
+        ball.addEventListener('click', ()=>{
+            console.log('click')
+        })
+    })
+}
+
+
+export{createBalls, clickBallsHandler} 
