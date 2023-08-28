@@ -57,13 +57,19 @@ function createBalls(container, nrBalls){
 
         const ballWith = balls[i].offsetWidth
         if(ballWith == 20){
-            balls[i].style.filter = 'blur(10px)'
+            balls[i].style.filter = 'blur(8px)'
         }
         if(ballWith == 30){
-            balls[i].style.filter = 'blur(5px)'
+            balls[i].style.filter = 'blur(6px)'
         }
         if(ballWith == 50){
+            balls[i].style.filter = 'blur(3.5px)'
+        }
+        if(ballWith == 60){
             balls[i].style.filter = 'blur(2px)'
+        }
+        if(ballWith == 70){
+            balls[i].style.filter = 'blur(1.5px)'
         }
     }
 }
@@ -94,16 +100,10 @@ function ballsParalax(){
         var y = Math.round(event.gamma); // racio
 
         // Do stuff with the new orientation data
-        x = x - 90
+        //x = x - 90
         ball2.forEach((ball)=>{
-            console.log('----------')
-            console.log(ball.offsetLeft, ball.offsetTop)
-
-
             // afect balls by "distance"
             defineTranslation(ball, x, y)
-
-            console.log('offset with' + ball.offsetWidth)
             
         })
     }
@@ -112,7 +112,7 @@ function ballsParalax(){
 
 // helpers 
 
-function defineTranslation(element, x, y){
+function defineTranslation(element, x, y, scalePassage){
 
     let objWith = element.clientHeight
 
@@ -121,22 +121,28 @@ function defineTranslation(element, x, y){
         return
     }
     if(objWith == '80'){
-        element.style.transform = `translateY(${x * 1.5}px) translateX(${y * 1.5}px)`; 
+        element.style.transform = `translateY(${x * 1.5}px) translateX(${y * 1.5}px)`;
+        return
     }
     if(objWith == '70'){
-        element.style.transform = `translateY(${x * 2}px) translateX(${y * 2}px)`; 
+        element.style.transform = `translateY(${x * 2}px) translateX(${y * 2}px)`;
+        return
     }
     if(objWith == '60'){
-        element.style.transform = `translateY(${x * 2}px) translateX(${y * 2}px)`; 
+        element.style.transform = `translateY(${x * 2}px) translateX(${y * 2}px)`;
+        return
     }
     if(objWith == '50'){
-        element.style.transform = `translateY(${x * 2.5}px) translateX(${y * 2.5}px)`; 
+        element.style.transform = `translateY(${x * 2.5}px) translateX(${y * 2.5}px)`;
+        return 
     }
     if(objWith == '30'){
-        element.style.transform = `translateY(${x * 3}px) translateX(${y * 3}px)`; 
+        element.style.transform = `translateY(${x * 3}px) translateX(${y * 3}px)`;
+        return
     }
     if(objWith == '20'){
-        element.style.transform = `translateY(${x * 3.5}px) translateX(${y * 3.5}px)`; 
+        element.style.transform = `translateY(${x * 3.5}px) translateX(${y * 3.5}px)`;
+        return
     }
 }
 
