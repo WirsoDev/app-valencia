@@ -83,28 +83,60 @@ function clickBallsHandler(){
 function ballsParalax(){
 
     let ball2 = document.querySelectorAll('.ball')
-    const p = document.querySelector('#test')
 
     window.addEventListener("deviceorientation", handleOrientation);
 
     function handleOrientation(event) {
 
         //get inicial gyro state
-        var absolute = event.absolute;
         var z = Math.round(event.alpha); //left and right
         var x = Math.round(event.beta); // up and down
         var y = Math.round(event.gamma); // racio
 
         // Do stuff with the new orientation data
+        x = x - 90
         ball2.forEach((ball)=>{
             console.log('----------')
             console.log(ball.offsetLeft, ball.offsetTop)
-            ball.style.transform = `translateY(${y})`;
-            ball.style.transform = `translateX(${x})`;
-        })
 
-        p.innerHTML = `x${x} : y${y}`
-        console.log(x, y, z)
+
+            // afect balls by "distance"
+            defineTranslation(ball, x, y)
+
+            console.log('offset with' + ball.offsetWidth)
+            
+        })
+    }
+}
+
+
+// helpers 
+
+function defineTranslation(element, x, y){
+
+    let objWith = element.clientHeight
+
+    if(objWith == '100'){
+        element.style.transform = `translateY(${x}px) translateX(${y}px) `;
+        return
+    }
+    if(objWith == '80'){
+        element.style.transform = `translateY(${x * 1.5}px) translateX(${y * 1.5}px)`; 
+    }
+    if(objWith == '70'){
+        element.style.transform = `translateY(${x * 2}px) translateX(${y * 2}px)`; 
+    }
+    if(objWith == '60'){
+        element.style.transform = `translateY(${x * 2}px) translateX(${y * 2}px)`; 
+    }
+    if(objWith == '50'){
+        element.style.transform = `translateY(${x * 2.5}px) translateX(${y * 2.5}px)`; 
+    }
+    if(objWith == '30'){
+        element.style.transform = `translateY(${x * 3}px) translateX(${y * 3}px)`; 
+    }
+    if(objWith == '20'){
+        element.style.transform = `translateY(${x * 3.5}px) translateX(${y * 3.5}px)`; 
     }
 }
 

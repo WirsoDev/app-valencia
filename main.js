@@ -7,7 +7,7 @@ const container = document.querySelector('.app-balls')
 
 function main(){
 
-    createBalls(container, 80)
+    createBalls(container, 90)
     clickBallsHandler()
     ballsParalax()
 
