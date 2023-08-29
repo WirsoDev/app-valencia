@@ -1,4 +1,3 @@
-import Parallax from "parallax-js"
 
 function createBalls(container, nrBalls){
 
