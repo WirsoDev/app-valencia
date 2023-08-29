@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     z-index: 1;
+    display: none;
 }
 
 .app-background img{
@@ -25,8 +26,13 @@
     position: absolute;
     z-index: 5;
     width: 100%;
+    height: 50%;
+    border-radius: 0px 0px 500px 500px ;
     justify-content: center;
-    margin-top: 40px;
+    align-items: flex-start;
+    background-color: rgba(218, 218, 218, 0.397);
+    padding: 40px 0px;
+    backdrop-filter: blur(10px);
 }
 
 .app-title img{
@@ -89,4 +95,134 @@
 .app-links-cnt img{
     width: 40px;
     animation: zoom 2s infinite;
+}
+
+/* email modal */
+
+.email-modal-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: #E1CDB8;
+}
+
+.email-modal--info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex: 2;
+}
+
+.email-modal--info h2{
+    font-family: 'gilroy-bold';
+    width: 70%;
+    text-align: center;
+    max-width: 500px;
+    color: #50543D;
+    font-size: 2em;
+}
+
+.email-modal--info img{
+    width: 45px;
+    margin-top: 30px;
+}
+
+.email-modal--email{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex: 2;
+}
+
+
+
+.email-modal--email p{
+    width: 70%;
+    max-width: 500px;
+    font-family: 'gilroy';
+    font-size: 1.2em;
+    color: #622C25;
+}
+
+.email-policy{
+    text-decoration: underline;
+    font-size: .85em !important;
+}
+
+.email-modal--email input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #50543D;
+    width: 75%;
+    max-width: 500px;
+    text-align: center;
+    font-family: 'gilroy';
+    font-size: 1.2em;
+    padding: 5px;
+    border-radius: none;
+    outline: none;
+    color: #50543D;
+}
+
+.sub-btn{
+    font-family: 'gilroy-bold';
+    background-color: #622C25;
+    padding: 10px 0px;
+    border-radius: 20px;
+    font-size: 1.5em;
+    color: #E1CDB8;
+}
+
+.dis-btn{
+    font-family: 'gilroy';
+    font-size: .8em;
+    margin-top: 10px;
+    text-decoration: underline;
+    color: #622C25;
+    margin-bottom: 30px;
+    line-height: 5px;
+}
+
+.dis-btn span{
+    font-size: 1.2em;
+}
+
+.email-modal--footer{
+    width: 100%;
+    display: flex;
+    background-color: #50543D;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex: 1;
+    border-radius: 100px 100px 0px 0px;
+    text-align: center;
+}
+
+.email-modal--footer h2{
+    font-family: 'gilroy';
+    font-size: 1.9em;
+    color: #E1CDB8;
+}
+
+
+.email-modal--footer h2 span{
+    font-family: 'gilroy-bold';
+    margin-left: 3px;
+}
+
+.hide{
+    display: none;
 }

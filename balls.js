@@ -34,8 +34,8 @@ function createBalls(container, nrBalls){
         ball.style.height = newSize
 
         container.appendChild(ball)
-        const randomX = Math.floor(Math.random() * (container.clientWidth - 30));
-        const randomY = Math.floor(Math.random() * (container.clientHeight - 30));
+        const randomX = Math.floor(Math.random() * (container.clientWidth - 10));
+        const randomY = Math.floor(Math.random() * (container.clientHeight - 10));
         
         ball.style.left = `${randomX}px`;
         ball.style.top = `${randomY}px`;
