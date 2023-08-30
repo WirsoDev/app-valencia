@@ -6,10 +6,12 @@
 // link to email policy
 
 //all btns consts
+import {crateAlertBox} from './alertBox'
 
 const submit = document.querySelector('.sub-btn')
 const dismissBtn = document.querySelector('.dis-btn')
 const emailModal = document.querySelector('.email-modal-cont')
+const emailPolicy = document.querySelector('.email-policy')
 
 
 function emailHandler(){
@@ -21,17 +23,27 @@ function emailHandler(){
         //check if is valid email regex
         const regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}') 
         let emailValid = regex.test(emailValue)
-        if(emailValid){
-            // do stuff
-            console.log(emailValue)
-        }else{
-            alert('Email not valid')
+
+        if(emailValue.length <= 0){
+            crateAlertBox('You need to fill in your email')
             return
         }
 
-        emailModal.classList.add('hide')
-    })
+        if(!emailValid){
+            crateAlertBox('This email is not valid')
+            return
+        }
 
+        if(emailValid){
+            // do stuff
+            crateAlertBox("Thanks! Let's go!")
+            setTimeout(()=>{
+                emailModal.classList.add('hide')
+            }, '3000')
+            return
+        }
+        
+    })
 }
 
 
@@ -42,9 +54,18 @@ function dismiss(){
 }
 
 
+function emailPolicyHandler(){
+    emailPolicy.addEventListener('click', ()=>{
+        window.open('https://www.aquinosgroup.com/termos-de-uso-e-politica-de-privaci?lang=en')
+    })
+}
+
+
 function emailMain(){
     emailHandler()
     dismiss()
+    emailPolicyHandler()
 }
+
 
 export{ emailMain }

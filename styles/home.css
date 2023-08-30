@@ -4,22 +4,6 @@
     overflow: hidden;
 }
 
-.app-background{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    display: none;
-}
-
-.app-background img{
-    
-    z-index: 1;
-
-}
 
 .app-title{
     display: flex;
@@ -120,8 +104,9 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    flex: 2;
+    flex: 3;
 }
+
 
 .email-modal--info h2{
     font-family: 'gilroy-bold';
@@ -132,10 +117,31 @@
     font-size: 2em;
 }
 
+
+.heart{
+    display: inline-block;
+    animation: zoomheart 2s infinite;
+}
+
+
+@keyframes zoomheart {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
 .email-modal--info img{
     width: 45px;
     margin-top: 30px;
 }
+
 
 .email-modal--email{
     display: flex;
@@ -143,9 +149,8 @@
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    flex: 2;
+    flex: 3;
 }
-
 
 
 .email-modal--email p{
@@ -202,18 +207,26 @@
 .email-modal--footer{
     width: 100%;
     display: flex;
+    flex-direction: column;
     background-color: #50543D;
     justify-content: center;
     align-items: center;
     height: 100%;
-    flex: 1;
+    flex: 0;
     border-radius: 100px 100px 0px 0px;
+    padding: 15px 0px;
     text-align: center;
 }
 
 .email-modal--footer h2{
     font-family: 'gilroy';
     font-size: 1.9em;
+    color: #E1CDB8;
+}
+
+.email-modal--footer p{
+    font-family: 'gilroy';
+    font-size: .9em;
     color: #E1CDB8;
 }
 
