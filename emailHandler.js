@@ -25,18 +25,18 @@ function emailHandler(){
         let emailValid = regex.test(emailValue)
 
         if(emailValue.length <= 0){
-            crateAlertBox('You need to fill in your email')
+            crateAlertBox( '&#9785;','You need to fill in your email')
             return
         }
 
         if(!emailValid){
-            crateAlertBox('This email is not valid')
+            crateAlertBox('&#9785;','This email is not valid')
             return
         }
 
         if(emailValid){
             // do stuff
-            crateAlertBox("Thanks! Let's go!")
+            crateAlertBox('&#9786;',"Thanks! Let's go!")
             setTimeout(()=>{
                 emailModal.classList.add('hide')
             }, '3000')

@@ -1,13 +1,13 @@
 // create an alert box for email
 
-function crateAlertBox(msg){
+function crateAlertBox(face, msg){
     
     const app = document.querySelector('.email-modal-cont')
 
     //create box
     let box = `
         <div class="alert-box">
-            <h1>&#9785;</h1>
+            <h1>${face}</h1>
             <p>${msg}</p>
         </div>
     `
