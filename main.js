@@ -1,7 +1,7 @@
 import './styles/index.css'
 import './styles/home.css'
 import './styles/alertbox.css'
-import { createBalls, clickBallsHandler, ballsParalax } from './balls'
+import { createBalls, clickBallsHandler, ballsParalax, requestDeviceOrientation} from './balls'
 import { mainBtn } from './btnshandler'
 import { emailMain } from './emailHandler'
 import {crateAlertBox} from './alertBox'
@@ -15,6 +15,7 @@ function main(){
     ballsParalax()
     mainBtn()
     emailMain()
+    requestDeviceOrientation()
 }
 
 main()
