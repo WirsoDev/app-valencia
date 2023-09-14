@@ -84,8 +84,27 @@ function clickBallsHandler(){
 
 }
 
+function requestDeviceOrientation () {
+    if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+    DeviceOrientationEvent.requestPermission()
+    .then(permissionState => {
+    if (permissionState === 'granted') {
+    window.addEventListener('deviceorientation', () => {
+        console.log('granted')
+    });
+    }
+    })
+    .catch(console.error);
+    } else {
+    // handle regular non iOS 13+ devices
+    console.log ("not iOS");
+    }
+  }
+
+
 
 function ballsParalax(){
+
 
     let ball2 = document.querySelectorAll('.ball')
 
@@ -146,4 +165,4 @@ function defineTranslation(element, x, y, scalePassage){
 }
 
 
-export{createBalls, clickBallsHandler, ballsParalax} 
+export{createBalls, clickBallsHandler, ballsParalax, requestDeviceOrientation} 
