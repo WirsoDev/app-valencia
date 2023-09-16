@@ -8,6 +8,9 @@ import {crateAlertBox} from './alertBox'
 
 const container = document.querySelector('.app-balls')
 
+//test IOS
+
+
 
 function main(){
     createBalls(container, 90)
