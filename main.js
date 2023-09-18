@@ -7,7 +7,7 @@ import { mainBtn } from './btnshandler'
 import { emailMain } from './emailHandler'
 import {crateAlertBox} from './alertBox'
 import { contactsMain } from './contactsHandler'
-import vscards from 'vcards-js'
+
 
 
 const container = document.querySelector('.app-balls')

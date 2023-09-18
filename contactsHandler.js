@@ -2,7 +2,9 @@ const getContacts = document.querySelector('#getContacts')
 const contactsModal = document.querySelector('.contacts')
 const closeBtn = document.querySelector('.close')
 
-const contactLeo = document.querySelector('#')
+const contactLeo = document.querySelector('#leo')
+
+import vscards from 'vcards-js'
 
 //open contacts card
 
@@ -23,35 +25,26 @@ function closeContactCard(){
 }
 
 
-function downContactsHandler(){
+function downContactsLeo(){
 
+    contactLeo.addEventListener('click', ()=>{
+        console.log('click')
 
-
-
-}
-
-
-
-
-function getConts(){
-    
-    getContacts.addEventListener('click', ()=>{
         console.log('click')
         var vCard = vscards()
-        vCard.firstName = 'Eric';
-        vCard.middleName = 'J';
-        vCard.lastName = 'Nesser';
-        vCard.organization = 'ACME Corporation';
-        vCard.workPhone = '312-555-1212';
-        vCard.title = 'Software Developer';
-        vCard.url = 'https://github.com/enesser';
-        vCard.note = 'Notes on Eric';
+        vCard.firstName = 'Leonel';
+        vCard.lastName = 'Mendes';
+        vCard.organization = 'Aquinos Group';
+        vCard.workPhone = '+351 968 484 537';
+        vCard.title = 'Commercial Manager';
 
         //vCard.saveToFile('./eric-nesser.vcf');
         downloadToFile(vCard, 'vcard.cvf','text/vcard')
 
     })
+
 }
+
 
 
 function downloadToFile(content, filename, contentType) {
@@ -69,6 +62,7 @@ function downloadToFile(content, filename, contentType) {
 function contactsMain(){
     openContactCards()
     closeContactCard()
+    downContactsLeo()
 }
 
 
