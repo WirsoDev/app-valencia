@@ -2,6 +2,9 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    
 }
 
 
@@ -10,18 +13,57 @@
     position: absolute;
     flex-direction: column;
     z-index: 5;
-    width: 100%;
-    height: 50%;
-    border-radius: 0px 0px 500px 500px ;
+    width: 90%;
+    height: auto;
+    border-radius: 30px 30px 30px 30px ;
     justify-content: flex-start;
     align-items: center;
     background-color: rgba(218, 218, 218, 0.397);
     padding: 40px 0px;
     backdrop-filter: blur(10px);
+    margin-top: 20px;
+}
+
+.two{
+    margin-top: 100px;
 }
 
 .app-title img{
     width: 40%;
+}
+
+
+/* APP INFO */
+.app-info{
+    margin-top: 20px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.app-info h2{
+    font-family: 'gilroy';
+    font-size: 1.5em;
+    text-align: center;
+    color: #333333;
+}
+
+.two{
+    margin-top: 100px;
+}
+
+.app-info-btn{
+    margin-top: 20px;
+    font-family: 'gilroy-bold';
+    text-align: center;
+    padding: 15px 40px;
+    font-size: 1.3em;
+    border-radius: 20px;
+    border: 2px solid #1d1d1d;
+    color: #333333;
 }
 
 .app-balls{
@@ -45,24 +87,19 @@
     width: 100%;
     height: 100%;
     display: flex;
-    position: absolute;
     justify-content: center;
     align-items: flex-end;
-    bottom: 0;
     margin-bottom: 30px;
 
 }
 
 .app-links-cnt{
-    width: 60%;
-    height: 70px;
+    width: 40%;
+    margin-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    background-color: #cccccc37;
-    backdrop-filter: blur(5px);
-    border-radius: 40px;
-    border: 1px solid black;
+    border-radius: 30px;
     z-index: 99 !important;
 }
 
@@ -80,7 +117,7 @@
 }
 
 .app-links-cnt img{
-    width: 40px;
+    width: 35px;
     animation: zoom 2s infinite;
 }
 
