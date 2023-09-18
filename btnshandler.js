@@ -1,6 +1,6 @@
 const Aqsite = document.getElementById('site')
 const linkedin = document.getElementById('in')
-const vcard = document.getElementById('vacrd')
+const Instagram = document.getElementById('inst')
 
 
 function siteHandeler(){
@@ -16,10 +16,17 @@ function linkedinHandler(){
     })
 }
 
+function instaHandler(){
+    Instagram.addEventListener('click', ()=>{
+        window.open('https://www.instagram.com/aquinos_group/')
+    })
+}
+
 
 function mainBtn(){
     siteHandeler()
     linkedinHandler()
+    instaHandler()
 }
 
 
