@@ -29,62 +29,106 @@ function closeContactCard(){
 
 
 function downContactsLeo(){
-
     contactLeo.addEventListener('click', ()=>{
         console.log('click')
         var vCard = "BEGIN:VCARD\nVERSION:3.0\n"
-        + "N:" + "contact.name "+ ";;;\n"
-        + "FN:" + "contact.name" + "\n"
-        + "TEL;CELL:" + "contact.phone" + "\n"
-        + "TEL;CELL:" + "contact.mobile" + "\n"
-        + "EMAIL;HOME:" + "contact.email "+ "\n"
-        + "ADR;HOME:" + "contact.address" + "\n"
-        + "ORG;WORK:" + "contact.organization" + "\n"
-        + "TITLE:" + "contact.title" + "\n"
-        + "URL:" + "contact.url" + "\n"
-        + "NOTE:" + "contact.notes" + "\n"
+        + "N:" + "Leonel Mendes"+ ";;;\n"
+        + "FN:" + "Leonel Mendes" + "\n"
+        + "TEL;CELL:" + "+351 968 484 537" + "\n"
+        + "EMAIL;HOME:" + "leonel.mendes@aquinos.pt"+ "\n"
+        + "ORG;WORK:" + "Aquinos Sofas" + "\n"
+        + "TITLE:" + "Commercial Manager" + "\n"
         + "END:VCARD";  
 
         //vCard.saveToFile('./eric-nesser.vcf');
         //downloadToFile(vCard, 'vcard.cvf','text/vcard')
         var blob = new Blob([vCard], { type: "text/vcard" });
         var url = URL.createObjectURL(blob);
-        
-
+    
             const newLink = document.createElement('a');
-            newLink.download = 'name' + ".vcf";
-            newLink.textContent = 'name';
+            newLink.download = 'Leonel' + ".vcf";
+            newLink.textContent = 'Leonel';
             newLink.href = url;
-
             newLink.click();
-
-            // window.close();
     })
+}
 
+function downContactsJose(){
+    contactJose.addEventListener('click', ()=>{
+        console.log('click')
+        var vCard = "BEGIN:VCARD\nVERSION:3.0\n"
+        + "N:" + "Jose Sousa"+ ";;;\n"
+        + "FN:" + "Jose Sousa" + "\n"
+        + "TEL;CELL:" + "+351 964 371 584" + "\n"
+        + "EMAIL;HOME:" + "jose.sousa@aquinos.pt"+ "\n"
+        + "ORG;WORK:" + "Aquinos Sofas" + "\n"
+        + "TITLE:" + "Key-Account Manager" + "\n"
+        + "END:VCARD";  
+
+        //vCard.saveToFile('./eric-nesser.vcf');
+        //downloadToFile(vCard, 'vcard.cvf','text/vcard')
+        var blob = new Blob([vCard], { type: "text/vcard" });
+        var url = URL.createObjectURL(blob);
+    
+            const newLink = document.createElement('a');
+            newLink.download = 'Jose' + ".vcf";
+            newLink.textContent = 'Jose';
+            newLink.href = url;
+            newLink.click();
+    })
+}
+
+function downContactsTiago(){
+    contactTiago.addEventListener('click', ()=>{
+        console.log('click')
+        var vCard = "BEGIN:VCARD\nVERSION:3.0\n"
+        + "N:" + "Tiago Ferreira"+ ";;;\n"
+        + "FN:" + "Tiago Ferreira" + "\n"
+        + "TEL;CELL:" + "" + "\n"
+        + "EMAIL;HOME:" + "TiagoFerreira.Dias@aquinos.pt"+ "\n"
+        + "ORG;WORK:" + "Aquinos Sofas" + "\n"
+        + "TITLE:" + "Key-Account Manager" + "\n"
+        + "END:VCARD";  
+
+        //vCard.saveToFile('./eric-nesser.vcf');
+        //downloadToFile(vCard, 'vcard.cvf','text/vcard')
+        var blob = new Blob([vCard], { type: "text/vcard" });
+        var url = URL.createObjectURL(blob);
+    
+            const newLink = document.createElement('a');
+            newLink.download = 'Tiago' + ".vcf";
+            newLink.textContent = 'Tiago';
+            newLink.href = url;
+            newLink.click();
+    })
+}
+
+function downContactsSofia(){
+    contactSofia.addEventListener('click', ()=>{
+        console.log('click')
+        var vCard = "BEGIN:VCARD\nVERSION:3.0\n"
+        + "N:" + "Sofia Cristovão"+ ";;;\n"
+        + "FN:" + "Sofia Cristovão" + "\n"
+        + "TEL;CELL:" + "+351 927 246 462" + "\n"
+        + "EMAIL;HOME:" + "Sofia.cristovao@aquinos.pt"+ "\n"
+        + "ORG;WORK:" + "Aquinos Sofas" + "\n"
+        + "TITLE:" + "Key-Account Manager" + "\n"
+        + "END:VCARD";  
+
+        //vCard.saveToFile('./eric-nesser.vcf');
+        //downloadToFile(vCard, 'vcard.cvf','text/vcard')
+        var blob = new Blob([vCard], { type: "text/vcard" });
+        var url = URL.createObjectURL(blob);
+    
+            const newLink = document.createElement('a');
+            newLink.download = 'Sofia' + ".vcf";
+            newLink.textContent = 'Sofia';
+            newLink.href = url;
+            newLink.click();
+    })
 }
 
 
-
-function downloadToFile(content, filename, contentType) {
-    const a = document.createElement('a');
-    a.style.display = 'none'
-    const file = new Blob([content], { type: contentType });
-
-    if(navigator.share){
-        navigator.share({
-            title: 'New Contact',
-            text: 'Save contact',
-            files: [new File([file], filename, {type: contentType})],
-        }).then(()=>{ })
-
-    }else{
-        a.href = URL.createObjectURL(file);
-        a.download = filename;
-        a.click();
-  
-        URL.revokeObjectURL(a.href);
-    }
-}
 
 
 
@@ -92,6 +136,9 @@ function contactsMain(){
     openContactCards()
     closeContactCard()
     downContactsLeo()
+    downContactsJose()
+    downContactsSofia()
+    downContactsTiago()
 }
 
 
