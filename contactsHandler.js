@@ -3,6 +3,9 @@ const contactsModal = document.querySelector('.contacts')
 const closeBtn = document.querySelector('.close')
 
 const contactLeo = document.querySelector('#leo')
+const contactJose = document.querySelector('#jose')
+const contactTiago = document.querySelector('#tiago')
+const contactSofia = document.querySelector('#sofia')
 
 import vscards from 'vcards-js'
 
@@ -29,8 +32,6 @@ function downContactsLeo(){
 
     contactLeo.addEventListener('click', ()=>{
         console.log('click')
-
-        console.log('click')
         var vCard = vscards()
         vCard.firstName = 'Leonel';
         vCard.lastName = 'Mendes';
@@ -39,7 +40,7 @@ function downContactsLeo(){
         vCard.title = 'Commercial Manager';
 
         //vCard.saveToFile('./eric-nesser.vcf');
-        downloadToFile(vCard, 'vcard.cvf','text/vcard')
+        downloadToFile(vCard)
 
     })
 
@@ -47,17 +48,19 @@ function downContactsLeo(){
 
 
 
-function downloadToFile(content, filename, contentType) {
+function downloadToFile(content) {
     const a = document.createElement('a');
     a.style.display = 'none'
-    const file = new Blob([content], { type: contentType });
-  
-    a.href = URL.createObjectURL(file);
-    a.download = filename;
-    a.click();
-  
-    URL.revokeObjectURL(a.href);
+    //const file = new Blob([content], { type: contentType });
+
+    // build data url
+    var url = 'data:text/x-vcard;charset=utf-8,' + encodeURIComponent(content);
+
+    // ask the browser to download it
+    document.location.href = url;
 }
+
+
 
 function contactsMain(){
     openContactCards()
