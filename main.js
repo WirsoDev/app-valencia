@@ -7,11 +7,13 @@ import { mainBtn } from './btnshandler'
 import { emailMain } from './emailHandler'
 import {crateAlertBox} from './alertBox'
 import { contactsMain } from './contactsHandler'
+import {DataHandler} from './sheets'
 
-
+//ping!
+const ping = new DataHandler
+ping.postNewPing({DATE: new Date()})
 
 const container = document.querySelector('.app-balls')
-
 
 function main(){
     createBalls(container, 90)

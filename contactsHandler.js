@@ -32,32 +32,58 @@ function downContactsLeo(){
 
     contactLeo.addEventListener('click', ()=>{
         console.log('click')
-        var vCard = vscards()
-        vCard.firstName = 'Leonel';
-        vCard.lastName = 'Mendes';
-        vCard.organization = 'Aquinos Group';
-        vCard.workPhone = '+351 968 484 537';
-        vCard.title = 'Commercial Manager';
+        var vCard = "BEGIN:VCARD\nVERSION:3.0\n"
+        + "N:" + "contact.name "+ ";;;\n"
+        + "FN:" + "contact.name" + "\n"
+        + "TEL;CELL:" + "contact.phone" + "\n"
+        + "TEL;CELL:" + "contact.mobile" + "\n"
+        + "EMAIL;HOME:" + "contact.email "+ "\n"
+        + "ADR;HOME:" + "contact.address" + "\n"
+        + "ORG;WORK:" + "contact.organization" + "\n"
+        + "TITLE:" + "contact.title" + "\n"
+        + "URL:" + "contact.url" + "\n"
+        + "NOTE:" + "contact.notes" + "\n"
+        + "END:VCARD";  
 
         //vCard.saveToFile('./eric-nesser.vcf');
-        downloadToFile(vCard)
+        //downloadToFile(vCard, 'vcard.cvf','text/vcard')
+        var blob = new Blob([vCard], { type: "text/vcard" });
+        var url = URL.createObjectURL(blob);
+        
 
+            const newLink = document.createElement('a');
+            newLink.download = 'name' + ".vcf";
+            newLink.textContent = 'name';
+            newLink.href = url;
+
+            newLink.click();
+
+            // window.close();
     })
 
 }
 
 
 
-function downloadToFile(content) {
+function downloadToFile(content, filename, contentType) {
     const a = document.createElement('a');
     a.style.display = 'none'
-    //const file = new Blob([content], { type: contentType });
+    const file = new Blob([content], { type: contentType });
 
-    // build data url
-    var url = 'data:text/x-vcard;charset=utf-8,' + encodeURIComponent(content);
+    if(navigator.share){
+        navigator.share({
+            title: 'New Contact',
+            text: 'Save contact',
+            files: [new File([file], filename, {type: contentType})],
+        }).then(()=>{ })
 
-    // ask the browser to download it
-    document.location.href = url;
+    }else{
+        a.href = URL.createObjectURL(file);
+        a.download = filename;
+        a.click();
+  
+        URL.revokeObjectURL(a.href);
+    }
 }
 
 

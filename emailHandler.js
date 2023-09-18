@@ -7,6 +7,7 @@
 
 //all btns consts
 import {crateAlertBox} from './alertBox'
+import {DataHandler} from './sheets'
 
 const submit = document.querySelector('.sub-btn')
 const dismissBtn = document.querySelector('.dis-btn')
@@ -37,6 +38,14 @@ function emailHandler(){
         if(emailValid){
             // do stuff
             crateAlertBox('&#9786;',"Thanks! Let's go!")
+
+            const x = new DataHandler()
+            let data = {
+                EMAIL:emailValue,
+                DATE: new Date()
+            }
+            x.postNewRequest(data)
+
             setTimeout(()=>{
                 emailModal.classList.add('hide')
             }, '3000')
