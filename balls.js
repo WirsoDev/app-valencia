@@ -85,12 +85,16 @@ function clickBallsHandler(){
 }
 
 function requestDeviceOrientation () {
+    //const h2 = document.getElementById('testios')
+
     if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
     DeviceOrientationEvent.requestPermission()
     .then(permissionState => {
     if (permissionState === 'granted') {
     window.addEventListener('deviceorientation', () => {
         console.log('granted')
+        //h2.innerHTML = 'granted'
+
     });
     }
     })
@@ -98,6 +102,7 @@ function requestDeviceOrientation () {
     } else {
     // handle regular non iOS 13+ devices
     console.log ("not iOS");
+    //h2.innerHTML = 'not ios'
     }
   }
 

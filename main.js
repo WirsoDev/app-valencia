@@ -1,10 +1,14 @@
 import './styles/index.css'
 import './styles/home.css'
 import './styles/alertbox.css'
+import './styles/contacts.css'
 import { createBalls, clickBallsHandler, ballsParalax, requestDeviceOrientation} from './balls'
 import { mainBtn } from './btnshandler'
 import { emailMain } from './emailHandler'
 import {crateAlertBox} from './alertBox'
+import { contactsMain } from './contactsHandler'
+import vscards from 'vcards-js'
+
 
 const container = document.querySelector('.app-balls')
 
@@ -16,6 +20,7 @@ function main(){
     mainBtn()
     emailMain()
     requestDeviceOrientation()
+    contactsMain()
 }
 
 main()
