@@ -6,6 +6,7 @@ const contactLeo = document.querySelector('#leo')
 const contactJose = document.querySelector('#jose')
 const contactTiago = document.querySelector('#tiago')
 const contactSofia = document.querySelector('#sofia')
+const contactFabio = document.querySelector('#fabio')
 
 import vscards from 'vcards-js'
 
@@ -128,6 +129,31 @@ function downContactsSofia(){
     })
 }
 
+function downContactsFabio(){
+    contactFabio.addEventListener('click', ()=>{
+        console.log('click')
+        var vCard = "BEGIN:VCARD\nVERSION:3.0\n"
+        + "N:" + "Fabio Costa"+ ";;;\n"
+        + "FN:" + "Fabio Costa" + "\n"
+        + "TEL;CELL:" + "" + "\n"
+        + "EMAIL;HOME:" + "fabio.costa@aquinos.pt"+ "\n"
+        + "ORG;WORK:" + "Aquinos Sofas" + "\n"
+        + "TITLE:" + "Key-Account Manager" + "\n"
+        + "END:VCARD";  
+
+        //vCard.saveToFile('./eric-nesser.vcf');
+        //downloadToFile(vCard, 'vcard.cvf','text/vcard')
+        var blob = new Blob([vCard], { type: "text/vcard" });
+        var url = URL.createObjectURL(blob);
+    
+            const newLink = document.createElement('a');
+            newLink.download = 'Fabio' + ".vcf";
+            newLink.textContent = 'Fabio';
+            newLink.href = url;
+            newLink.click();
+    })
+}
+
 
 
 
@@ -139,6 +165,7 @@ function contactsMain(){
     downContactsJose()
     downContactsSofia()
     downContactsTiago()
+    downContactsFabio()
 }
 
 
