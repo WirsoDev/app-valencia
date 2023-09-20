@@ -211,6 +211,8 @@
 .email-policy{
     text-decoration: underline;
     font-size: .85em !important;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .email-modal--email input{
@@ -235,16 +237,19 @@
     border-radius: 20px;
     font-size: 1.5em;
     color: #E1CDB8;
+    margin-top: 20px;
 }
 
 .dis-btn{
-    font-family: 'gilroy';
-    font-size: .9em;
+    font-family: 'gilroy-bold';
+    font-size: 1em;
     margin-top: 10px;
-    text-decoration: underline;
+    background-color: #50543D;
     color: #622C25;
-    margin-bottom: 30px;
-    line-height: 5px;
+    margin-bottom: 15px;
+    padding: 20px 15px;
+    border-radius: 30px;
+    color: #E1CDB8;
 }
 
 .dis-btn span{
