@@ -48,7 +48,7 @@ function emailHandler(){
 
             setTimeout(()=>{
                 emailModal.classList.add('hide')
-            }, '3000')
+            }, '500')
             return
         }
         
