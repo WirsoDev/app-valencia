@@ -65,6 +65,14 @@ function downContactsLeo(){
 
 function downContactsJose(){
     contactJose.addEventListener('click', ()=>{
+
+        const x = new DataHandler()
+            let data = {
+                CONTACT:'JOSE',
+                DATE: new Date()
+            }
+            x.postNewContact(data)
+
         console.log('click')
         var vCard = "BEGIN:VCARD\nVERSION:3.0\n"
         + "N:" + "Jose Sousa"+ ";;;\n"
@@ -85,18 +93,19 @@ function downContactsJose(){
             newLink.textContent = 'Jose';
             newLink.href = url;
             newLink.click();
-
-            const x = new DataHandler()
-            let data = {
-                CONTACT:'JOSE',
-                DATE: new Date()
-            }
-            x.postNewContact(data)
     })
 }
 
 function downContactsTiago(){
     contactTiago.addEventListener('click', ()=>{
+
+        const x = new DataHandler()
+            let data = {
+                CONTACT:'TIAGO',
+                DATE: new Date()
+            }
+            x.postNewContact(data)
+
         console.log('click')
         var vCard = "BEGIN:VCARD\nVERSION:3.0\n"
         + "N:" + "Tiago Ferreira"+ ";;;\n"
@@ -117,18 +126,19 @@ function downContactsTiago(){
             newLink.textContent = 'Tiago';
             newLink.href = url;
             newLink.click();
-
-            const x = new DataHandler()
-            let data = {
-                CONTACT:'TIAGO',
-                DATE: new Date()
-            }
-            x.postNewContact(data)
     })
 }
 
 function downContactsSofia(){
     contactSofia.addEventListener('click', ()=>{
+
+        const x = new DataHandler()
+            let data = {
+                CONTACT:'SOFIA',
+                DATE: new Date()
+            }
+            x.postNewContact(data)
+
         console.log('click')
         var vCard = "BEGIN:VCARD\nVERSION:3.0\n"
         + "N:" + "Sofia Cristovão"+ ";;;\n"
@@ -149,18 +159,19 @@ function downContactsSofia(){
             newLink.textContent = 'Sofia';
             newLink.href = url;
             newLink.click();
-
-            const x = new DataHandler()
-            let data = {
-                CONTACT:'SOFIA',
-                DATE: new Date()
-            }
-            x.postNewContact(data)
     })
 }
 
 function downContactsFabio(){
     contactFabio.addEventListener('click', ()=>{
+
+        const x = new DataHandler()
+            let data = {
+                CONTACT:'FABIO',
+                DATE: new Date()
+            }
+            x.postNewContact(data)
+
         console.log('click')
         var vCard = "BEGIN:VCARD\nVERSION:3.0\n"
         + "N:" + "Fabio Costa"+ ";;;\n"
@@ -182,12 +193,6 @@ function downContactsFabio(){
             newLink.href = url;
             newLink.click();
 
-            const x = new DataHandler()
-            let data = {
-                CONTACT:'FABIO',
-                DATE: new Date()
-            }
-            x.postNewContact(data)
     })
 }
 
