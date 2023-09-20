@@ -8,6 +8,8 @@ const contactTiago = document.querySelector('#tiago')
 const contactSofia = document.querySelector('#sofia')
 const contactFabio = document.querySelector('#fabio')
 
+import {DataHandler} from './sheets'
+
 import vscards from 'vcards-js'
 
 //open contacts card
@@ -51,6 +53,13 @@ function downContactsLeo(){
             newLink.textContent = 'Leonel';
             newLink.href = url;
             newLink.click();
+
+            const x = new DataHandler()
+            let data = {
+                CONTACT:'LEONEL',
+                DATE: new Date()
+            }
+            x.postNewContact(data)
     })
 }
 
@@ -76,6 +85,13 @@ function downContactsJose(){
             newLink.textContent = 'Jose';
             newLink.href = url;
             newLink.click();
+
+            const x = new DataHandler()
+            let data = {
+                CONTACT:'JOSE',
+                DATE: new Date()
+            }
+            x.postNewContact(data)
     })
 }
 
@@ -101,6 +117,13 @@ function downContactsTiago(){
             newLink.textContent = 'Tiago';
             newLink.href = url;
             newLink.click();
+
+            const x = new DataHandler()
+            let data = {
+                CONTACT:'TIAGO',
+                DATE: new Date()
+            }
+            x.postNewContact(data)
     })
 }
 
@@ -126,6 +149,13 @@ function downContactsSofia(){
             newLink.textContent = 'Sofia';
             newLink.href = url;
             newLink.click();
+
+            const x = new DataHandler()
+            let data = {
+                CONTACT:'SOFIA',
+                DATE: new Date()
+            }
+            x.postNewContact(data)
     })
 }
 
@@ -151,6 +181,13 @@ function downContactsFabio(){
             newLink.textContent = 'Fabio';
             newLink.href = url;
             newLink.click();
+
+            const x = new DataHandler()
+            let data = {
+                CONTACT:'FABIO',
+                DATE: new Date()
+            }
+            x.postNewContact(data)
     })
 }
 
